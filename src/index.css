@@ -6,26 +6,27 @@
   --font-secondary: "Space Grotesk", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
-  --color-primary: #155EEF;
-  --color-accent: #53B1FD;
-  --color-bg-card: #161618;
-  --color-border: #262629;
-  --color-bg-dark: #0A0A0B;
+  --color-primary: #FFC801;          /* Forsythia (Bright Gold-Yellow) */
+  --color-accent: #FF9932;           /* Deep Saffron (Warm Sunset Orange) */
+  --color-bg-card: #172B36;          /* Oceanic Noir (Deep Slate Blue) */
+  --color-border: #223A47;           /* Harmonious Dark Blue-Gray border */
+  --color-bg-dark: #0B1318;          /* Rich, high-contrast dark backdrop */
 
-  /* Premium brand blue overrides */
-  --color-blue-500: #2970FF;
-  --color-blue-600: #155EEF;
-  --color-blue-700: #1044B2;
-  --color-blue-800: #0B318F;
-  --color-blue-950: #061B53;
+  /* Premium brand blue overrides to elegantly map tailwind utilities to our palette */
+  --color-blue-400: #FFC801;         /* Forsythia */
+  --color-blue-500: #FF9932;         /* Deep Saffron */
+  --color-blue-600: #FFC801;         /* Forsythia */
+  --color-blue-700: #FF9932;         /* Deep Saffron */
+  --color-blue-800: #114C5A;         /* Nocturnal Expedition (Dark Teal) */
+  --color-blue-950: #0C2C34;         /* Deepest Nocturnal */
 }
 
 :root {
-  --color-primary: #155EEF;
-  --color-accent: #53B1FD;
-  --color-bg-card: #161618;
-  --color-border: #262629;
-  --color-bg-dark: #0A0A0B;
+  --color-primary: #FFC801;
+  --color-accent: #FF9932;
+  --color-bg-card: #172B36;
+  --color-border: #223A47;
+  --color-bg-dark: #0B1318;
   scroll-behavior: smooth;
 }
 
@@ -36,7 +37,7 @@
 
 .highlight-card {
   border-color: var(--color-primary) !important;
-  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15) !important;
+  box-shadow: 0 0 40px rgba(255, 200, 1, 0.15) !important;
 }
 
 /* Custom fade-in animations with CSS transitions */

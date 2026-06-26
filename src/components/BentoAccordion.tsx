@@ -101,11 +101,11 @@ export default function BentoAccordion() {
         return (
           <div className="flex flex-col h-full justify-between gap-4">
             {/* Widget Header Toggles */}
-            <div className="flex items-center justify-between border-b border-[#262629] pb-3">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-                <Activity className="w-3 h-3 text-blue-500 animate-pulse" /> Live Telemetry
+                <Activity className="w-3 h-3 text-primary animate-pulse" /> Live Telemetry
               </span>
-              <div className="flex bg-[#0A0A0B] p-0.5 rounded-lg text-[10px] border border-[#262629]">
+              <div className="flex bg-bg-dark p-0.5 rounded-lg text-[10px] border border-border">
                 {(['realtime', 'weekly', 'monthly'] as const).map((t) => (
                   <button
                     key={t}
@@ -115,7 +115,7 @@ export default function BentoAccordion() {
                       setAnalyticsTimeframe(t);
                     }}
                     className={`px-2.5 py-1 rounded-md font-bold capitalize transition-all duration-150 cursor-pointer ${
-                      analyticsTimeframe === t ? 'bg-[#161618] text-white border border-[#262629] shadow-xs' : 'text-zinc-500 hover:text-zinc-300'
+                      analyticsTimeframe === t ? 'bg-bg-card text-white border border-border shadow-xs' : 'text-zinc-500 hover:text-zinc-300'
                     }`}
                   >
                     {t}
@@ -127,9 +127,9 @@ export default function BentoAccordion() {
             {/* Simulated Live Chart SVG */}
             <div className="flex-1 min-h-[140px] flex items-end justify-between relative px-2 pt-2">
               <div className="absolute inset-0 flex flex-col justify-between pointer-events-none opacity-30">
-                <div className="border-b border-[#262629] w-full h-0" />
-                <div className="border-b border-[#262629] w-full h-0" />
-                <div className="border-b border-[#262629] w-full h-0" />
+                <div className="border-b border-border w-full h-0" />
+                <div className="border-b border-border w-full h-0" />
+                <div className="border-b border-border w-full h-0" />
               </div>
 
               {/* Dynamic Bars based on Timeframe Context Lock */}
@@ -167,7 +167,7 @@ export default function BentoAccordion() {
             </div>
 
             {/* Chart Subtitles */}
-            <div className="flex justify-between text-[9px] font-mono text-zinc-500 border-t border-[#262629] pt-2">
+            <div className="flex justify-between text-[9px] font-mono text-zinc-500 border-t border-border pt-2">
               <span>Ingestion Rate: 1,429 ev/s</span>
               <span>Pristine Accuracy</span>
             </div>
@@ -178,7 +178,7 @@ export default function BentoAccordion() {
         return (
           <div className="flex flex-col h-full justify-between gap-4">
             {/* Context Lock Header */}
-            <div className="flex items-center justify-between border-b border-[#262629] pb-3">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
                 <Terminal className="w-3 h-3 text-emerald-500" /> Vault Node
               </span>
@@ -213,8 +213,8 @@ export default function BentoAccordion() {
             </div>
 
             {/* Mock Secrets Board */}
-            <div className="bg-[#0A0A0B] border border-[#262629] rounded-lg p-2.5 text-[9px] font-mono text-zinc-300">
-              <div className="flex justify-between text-[8px] text-zinc-500 border-b border-[#262629] pb-1 mb-1">
+            <div className="bg-bg-dark border border-border rounded-lg p-2.5 text-[9px] font-mono text-zinc-300">
+              <div className="flex justify-between text-[8px] text-zinc-500 border-b border-border pb-1 mb-1">
                 <span>Key Label</span>
                 <span>Isolated Decryption Value</span>
               </div>
@@ -230,17 +230,17 @@ export default function BentoAccordion() {
         return (
           <div className="flex flex-col h-full justify-between gap-4">
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-[#262629] pb-3">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
-                <Server className="w-3 h-3 text-blue-500" /> CDN Proximity
+                <Server className="w-3 h-3 text-primary" /> CDN Proximity
               </span>
-              <span className="text-[10px] bg-blue-500/10 border border-blue-500/20 text-blue-400 px-2 py-0.5 rounded-full font-bold">
+              <span className="text-[10px] bg-[#114C5A]/30 border border-[#114C5A]/60 text-primary px-2 py-0.5 rounded-full font-bold">
                 280+ Nodes
               </span>
             </div>
 
             {/* Region Selectors */}
-            <div className="grid grid-cols-2 gap-1 bg-[#0A0A0B] border border-[#262629] p-0.5 rounded-lg text-[10px]">
+            <div className="grid grid-cols-2 gap-1 bg-bg-dark border border-border p-0.5 rounded-lg text-[10px]">
               {(['us', 'eu'] as const).map((r) => (
                 <button
                   key={r}
@@ -250,7 +250,7 @@ export default function BentoAccordion() {
                     setSelectedRegion(r);
                   }}
                   className={`py-1.5 rounded-md font-semibold capitalize transition-all duration-150 cursor-pointer ${
-                    selectedRegion === r ? 'bg-[#161618] border border-[#262629] text-white shadow-xs font-bold' : 'text-zinc-500 hover:text-zinc-300'
+                    selectedRegion === r ? 'bg-bg-card border border-border text-white shadow-xs font-bold' : 'text-zinc-500 hover:text-zinc-300'
                   }`}
                 >
                   {r.toUpperCase()}
@@ -259,20 +259,20 @@ export default function BentoAccordion() {
             </div>
 
             {/* Live Node Statistics Card */}
-            <div className="bg-[#0A0A0B] border border-[#262629] rounded-xl p-3 flex flex-col justify-between flex-1">
+            <div className="bg-bg-dark border border-border rounded-xl p-3 flex flex-col justify-between flex-1">
               <div className="flex justify-between items-start">
                 <div>
                   <p className="text-[10px] font-bold text-white">{regionsData[selectedRegion].name}</p>
                   <p className="text-[9px] font-mono text-zinc-500">Node Sync: Synced</p>
                 </div>
-                <span className="text-xs font-extrabold text-blue-400 font-mono">
+                <span className="text-xs font-extrabold text-primary font-mono">
                   {regionsData[selectedRegion].ping}
                 </span>
               </div>
 
-              <div className="h-2 w-full bg-[#161618] border border-[#262629] rounded-full mt-2 overflow-hidden">
+              <div className="h-2 w-full bg-bg-card border border-border rounded-full mt-2 overflow-hidden">
                 <div 
-                  className="h-full bg-blue-500 rounded-full transition-all duration-300"
+                  className="h-full bg-primary rounded-full transition-all duration-300"
                   style={{ width: regionsData[selectedRegion].load }}
                 />
               </div>
@@ -291,7 +291,7 @@ export default function BentoAccordion() {
         return (
           <div className="flex flex-col h-full justify-between gap-4">
             {/* Header */}
-            <div className="flex items-center justify-between border-b border-[#262629] pb-3">
+            <div className="flex items-center justify-between border-b border-border pb-3">
               <span className="text-xs font-mono text-zinc-400 flex items-center gap-1.5">
                 <ShieldCheck className="w-3 h-3 text-amber-500" /> Pipeline Debugger
               </span>
@@ -299,7 +299,7 @@ export default function BentoAccordion() {
             </div>
 
             {/* Visual Steps Layout */}
-            <div className="flex flex-col md:flex-row items-center justify-between gap-2 bg-[#0A0A0B] border border-[#262629] p-2.5 rounded-xl flex-1">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-2 bg-bg-dark border border-border p-2.5 rounded-xl flex-1">
               {pipelineSteps.map((step, idx) => (
                 <React.Fragment key={idx}>
                   <button
@@ -310,8 +310,8 @@ export default function BentoAccordion() {
                     }}
                     className={`flex-1 w-full text-left p-2.5 rounded-lg border transition-all duration-200 cursor-pointer ${
                       pipelineStep === idx
-                        ? 'bg-[#161618] border-amber-500/50 shadow-xs'
-                        : 'bg-[#161618]/40 border-[#262629] hover:border-zinc-700'
+                        ? 'bg-bg-card border-amber-500/50 shadow-xs'
+                        : 'bg-bg-card/40 border-border hover:border-zinc-700'
                     }`}
                   >
                     <div className="flex items-center justify-between">
@@ -331,8 +331,8 @@ export default function BentoAccordion() {
             </div>
 
             {/* Step Console Detail */}
-            <div className="bg-[#0A0A0B] border border-[#262629] rounded-lg p-2.5 text-[9px] font-mono text-amber-400">
-              <div className="flex justify-between text-zinc-500 border-b border-[#262629] pb-1 mb-1 text-[8px]">
+            <div className="bg-bg-dark border border-border rounded-lg p-2.5 text-[9px] font-mono text-amber-400">
+              <div className="flex justify-between text-zinc-500 border-b border-border pb-1 mb-1 text-[8px]">
                 <span>Pipeline Log Console</span>
                 <span>Status: OK</span>
               </div>
@@ -352,12 +352,12 @@ export default function BentoAccordion() {
   };
 
   return (
-    <section id="features" className="py-24 px-6 bg-[#0A0A0B] border-t border-[#262629]">
+    <section id="features" className="py-24 px-6 bg-bg-dark border-t border-border">
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-blue-950/40 border border-blue-800/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-400 tracking-wider uppercase mb-4 animate-fade-in">
-            <Zap className="w-3.5 h-3.5 text-blue-400" />
+          <div className="inline-flex items-center gap-2 bg-[#114C5A]/30 border border-[#114C5A]/60 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#FFC801] tracking-wider uppercase mb-4 animate-fade-in">
+            <Zap className="w-3.5 h-3.5 text-primary" />
             Feature Showcase
           </div>
           <h2 id="features-heading" className="text-4xl md:text-5xl font-extrabold font-secondary tracking-tight text-white mb-4">
@@ -380,16 +380,16 @@ export default function BentoAccordion() {
                 key={feat.id}
                 id={`bento-card-${feat.id}`}
                 onClick={() => setActiveFeature(feat.id)}
-                className={`group flex flex-col justify-between bg-[#161618] rounded-3xl border p-8 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg ${feat.gridClass} ${
+                className={`group flex flex-col justify-between bg-bg-card rounded-3xl border p-8 cursor-pointer transition-all duration-300 ease-out hover:shadow-lg ${feat.gridClass} ${
                   isSelected
                     ? 'highlight-card border-blue-500 shadow-md ring-4 ring-blue-500/10'
-                    : 'border-[#262629] hover:border-zinc-700 opacity-80 hover:opacity-100'
+                    : 'border-border hover:border-zinc-700 opacity-80 hover:opacity-100'
                 }`}
               >
                 {/* Text Content */}
                 <div className="mb-6">
                   <div className="flex items-center gap-2 mb-3">
-                    <div className="p-2 bg-[#0A0A0B] border border-[#262629] rounded-xl">
+                    <div className="p-2 bg-bg-dark border border-border rounded-xl">
                       {feat.icon}
                     </div>
                     <span className="text-xs font-bold text-zinc-500 font-mono tracking-wider uppercase">
@@ -405,7 +405,7 @@ export default function BentoAccordion() {
                 </div>
 
                 {/* Rich Interactive Widget Area */}
-                <div className="bg-[#161618] border border-[#262629] p-5 rounded-2xl shadow-inner min-h-[220px]">
+                <div className="bg-bg-card border border-border p-5 rounded-2xl shadow-inner min-h-[220px]">
                   {renderInteractiveWidget(feat.id)}
                 </div>
               </div>
@@ -424,8 +424,8 @@ export default function BentoAccordion() {
               <div
                 key={feat.id}
                 id={`accordion-item-${feat.id}`}
-                className={`bg-[#161618] rounded-2xl border overflow-hidden transition-all duration-300 ${
-                  isExpanded ? 'highlight-card border-blue-500 shadow-md' : 'border-[#262629]'
+                className={`bg-bg-card rounded-2xl border overflow-hidden transition-all duration-300 ${
+                  isExpanded ? 'highlight-card border-blue-500 shadow-md' : 'border-border'
                 }`}
               >
                 {/* Accordion Trigger Header */}
@@ -433,10 +433,10 @@ export default function BentoAccordion() {
                   type="button"
                   id={`accordion-trigger-${feat.id}`}
                   onClick={() => setActiveFeature(isExpanded ? '' : feat.id)}
-                  className="w-full flex items-center justify-between p-6 text-left cursor-pointer transition-all duration-200 hover:bg-[#1a1a1d]"
+                  className="w-full flex items-center justify-between p-6 text-left cursor-pointer transition-all duration-200 hover:bg-[#1f3745]"
                 >
                   <div className="flex items-center gap-3">
-                    <div className="p-2 bg-[#0A0A0B] border border-[#262629] rounded-xl shrink-0">
+                    <div className="p-2 bg-bg-dark border border-border rounded-xl shrink-0">
                       {feat.icon}
                     </div>
                     <div>
@@ -462,7 +462,7 @@ export default function BentoAccordion() {
                   style={{
                     maxHeight: isExpanded ? '500px' : '0px',
                     opacity: isExpanded ? 1 : 0,
-                    borderTop: isExpanded ? '1px solid #262629' : 'none'
+                    borderTop: isExpanded ? '1px solid var(--color-border)' : 'none'
                   }}
                 >
                   <div className="p-6 space-y-4">
@@ -470,7 +470,7 @@ export default function BentoAccordion() {
                       {feat.description}
                     </p>
                     {/* Embedded interactive widget inside mobile accordion cell */}
-                    <div className="bg-[#161618] border border-[#262629] p-4 rounded-xl shadow-xs min-h-[200px]">
+                    <div className="bg-bg-card border border-border p-4 rounded-xl shadow-xs min-h-[200px]">
                       {renderInteractiveWidget(feat.id)}
                     </div>
                   </div>

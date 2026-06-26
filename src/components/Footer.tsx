@@ -7,12 +7,12 @@ import { Cloud, Github, Twitter, Youtube } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer id="app-footer" className="bg-[#0A0A0B] text-zinc-400 py-16 px-6 border-t border-[#262629]">
+    <footer id="app-footer" className="bg-bg-dark text-zinc-400 py-16 px-6 border-t border-border">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand column */}
         <div className="space-y-4">
           <div className="flex items-center gap-2 text-white">
-            <div className="bg-blue-600 text-white p-1.5 rounded-lg">
+            <div className="bg-blue-600 text-zinc-950 p-1.5 rounded-lg">
               <Cloud className="w-4 h-4" />
             </div>
             <span className="text-base font-extrabold font-secondary tracking-tight">
@@ -69,7 +69,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="h-px bg-[#262629] my-10 max-w-7xl mx-auto" />
+      <div className="h-px bg-border my-10 max-w-7xl mx-auto" />
 
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-[11px] font-mono text-zinc-500">
         <p>© 2026 AuraEdge Technologies Inc. All rights reserved.</p>

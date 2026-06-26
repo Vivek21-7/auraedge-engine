@@ -23,7 +23,7 @@ export default function App() {
   const [isDemoOpen, setIsDemoOpen] = useState(false);
 
   return (
-    <div id="app-root" className="min-h-screen bg-[#0A0A0B] text-[#EDEDED] selection:bg-blue-600 selection:text-white font-sans antialiased overflow-x-hidden">
+    <div id="app-root" className="min-h-screen bg-bg-dark text-[#EDEDED] selection:bg-primary selection:text-[#172B36] font-sans antialiased overflow-x-hidden">
       {/* Semantic Layout: Header */}
       <Header onStartDeploying={() => setIsDeployOpen(true)} />
 

@@ -11,11 +11,11 @@ interface HeaderProps {
 
 export default function Header({ onStartDeploying }: HeaderProps) {
   return (
-    <header id="app-header" className="sticky top-0 z-50 bg-[#0A0A0B]/80 backdrop-blur-md border-b border-[#262629] px-6 py-4">
+    <header id="app-header" className="sticky top-0 z-50 bg-bg-dark/80 backdrop-blur-md border-b border-border px-6 py-4">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo and Brand */}
         <div className="flex items-center gap-2">
-          <div className="bg-blue-600 text-white p-2 rounded-xl">
+          <div className="bg-primary text-zinc-950 p-2 rounded-xl font-bold">
             <Cloud className="w-5 h-5" />
           </div>
           <span className="text-lg font-extrabold font-secondary text-white tracking-tight">
@@ -45,7 +45,7 @@ export default function Header({ onStartDeploying }: HeaderProps) {
             id="btn-nav-cta"
             type="button"
             onClick={onStartDeploying}
-            className="bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all duration-150 shadow-sm hover:shadow-md cursor-pointer"
+            className="bg-blue-600 hover:bg-blue-500 text-zinc-950 text-xs font-bold px-4 py-2.5 rounded-xl transition-all duration-150 shadow-sm hover:shadow-md cursor-pointer"
           >
             Start Deploying
           </button>

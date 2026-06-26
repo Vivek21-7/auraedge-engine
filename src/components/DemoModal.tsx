@@ -168,12 +168,12 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
       />
 
       {/* Main dialog box */}
-      <div className="bg-[#161618] border border-[#262629] rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col animate-fade-in">
+      <div className="bg-bg-card border border-border rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col animate-fade-in">
         
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#262629]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border">
           <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-blue-600 rounded-lg text-white animate-pulse">
+            <div className="p-1.5 bg-blue-600 rounded-lg text-zinc-950 animate-pulse">
               <Activity className="w-4 h-4" />
             </div>
             <div>
@@ -183,14 +183,14 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 hover:bg-[#262629] rounded-lg text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="p-1.5 hover:bg-bg-dark rounded-lg text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Content Splitting */}
-        <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-[#262629]">
+        <div className="flex-1 overflow-y-auto grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-border">
           
           {/* Left Column: Interactive Scenario Control & Code snippet */}
           <div className="md:col-span-5 p-6 flex flex-col justify-between space-y-6">
@@ -208,7 +208,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                   className={`w-full text-left p-3.5 rounded-xl border transition-all duration-150 cursor-pointer ${
                     activeScenario === scenario.id
                       ? 'border-blue-500 bg-blue-500/5 shadow-sm'
-                      : 'border-[#262629] hover:border-zinc-700'
+                      : 'border-border hover:border-zinc-700'
                   }`}
                 >
                   <div className="flex items-center justify-between">
@@ -226,34 +226,34 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
             <div className="space-y-2">
               <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500">
                 <span>Developer Integration Snippet</span>
-                <span className="flex items-center gap-1 text-blue-400">
+                <span className="flex items-center gap-1 text-primary">
                   <Sparkles className="w-3 h-3" /> Auto-optimizing
                 </span>
               </div>
-              <div className="bg-[#0A0A0B] border border-[#262629] rounded-xl p-3 h-44 overflow-y-auto font-mono text-[10px] text-zinc-300 leading-relaxed scrollbar-thin scrollbar-thumb-zinc-800">
+              <div className="bg-bg-dark border border-border rounded-xl p-3 h-44 overflow-y-auto font-mono text-[10px] text-zinc-300 leading-relaxed scrollbar-thin scrollbar-thumb-zinc-800">
                 <pre>{scenarios.find(s => s.id === activeScenario)?.codeSnippet}</pre>
               </div>
             </div>
           </div>
 
-          {/* Right Column: Live Telemetry & Graph charts */}
-          <div className="md:col-span-7 p-6 flex flex-col space-y-6 bg-[#0A0A0B]/40">
+           {/* Right Column: Live Telemetry & Graph charts */}
+          <div className="md:col-span-7 p-6 flex flex-col space-y-6 bg-bg-dark/40">
             
             {/* Live Metrics Header row */}
             <div className="grid grid-cols-3 gap-3">
-              <div className="bg-[#161618] border border-[#262629] rounded-xl p-3 space-y-1 text-center">
+              <div className="bg-bg-card border border-border rounded-xl p-3 space-y-1 text-center">
                 <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Average Latency</p>
-                <p className="text-xl font-bold text-blue-400 font-mono tracking-tight">
+                <p className="text-xl font-bold text-primary font-mono tracking-tight">
                   {metrics.latency.toFixed(2)} ms
                 </p>
               </div>
-              <div className="bg-[#161618] border border-[#262629] rounded-xl p-3 space-y-1 text-center">
+              <div className="bg-bg-card border border-border rounded-xl p-3 space-y-1 text-center">
                 <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Cache Hit Rate</p>
                 <p className="text-xl font-bold text-emerald-400 font-mono tracking-tight">
                   {activeScenario === 'compute' ? 'N/A' : `${metrics.hitRate.toFixed(1)}%`}
                 </p>
               </div>
-              <div className="bg-[#161618] border border-[#262629] rounded-xl p-3 space-y-1 text-center">
+              <div className="bg-bg-card border border-border rounded-xl p-3 space-y-1 text-center">
                 <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-wider">Security State</p>
                 <p className="text-xl font-bold text-amber-400 font-mono tracking-tight">
                   {metrics.successRate.toFixed(0)}% OK
@@ -261,8 +261,8 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               </div>
             </div>
 
-            {/* Dynamic Latency Line Graph SVG */}
-            <div className="bg-[#0A0A0B] border border-[#262629] rounded-2xl p-4 flex flex-col h-44 justify-between relative">
+             {/* Dynamic Latency Line Graph SVG */}
+            <div className="bg-bg-dark border border-border rounded-2xl p-4 flex flex-col h-44 justify-between relative">
               <div className="flex items-center justify-between text-[10px] font-mono text-zinc-500">
                 <span>Real-Time Processing Delay Monitor</span>
                 <span>Active Core Cluster</span>
@@ -270,12 +270,12 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
 
               {/* Simulated Waveform / Grid lines */}
               <div className="flex-1 flex items-end h-28 relative pt-4">
-                <div className="absolute inset-x-0 top-1/4 border-b border-[#262629]/50 h-0" />
-                <div className="absolute inset-x-0 top-2/4 border-b border-[#262629]/50 h-0" />
-                <div className="absolute inset-x-0 top-3/4 border-b border-[#262629]/50 h-0" />
+                <div className="absolute inset-x-0 top-1/4 border-b border-border/50 h-0" />
+                <div className="absolute inset-x-0 top-2/4 border-b border-border/50 h-0" />
+                <div className="absolute inset-x-0 top-3/4 border-b border-border/50 h-0" />
                 
                 {/* SVG path mapping */}
-                <svg className="w-full h-full absolute inset-0 text-blue-500" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <svg className="w-full h-full absolute inset-0 text-primary" viewBox="0 0 100 100" preserveAspectRatio="none">
                   <polyline
                     fill="none"
                     stroke="currentColor"
@@ -309,7 +309,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               </label>
               <div 
                 ref={logsContainerRef}
-                className="bg-[#0A0A0B] border border-[#262629] rounded-xl p-3 h-32 overflow-y-auto font-mono text-[10px] text-zinc-300 space-y-1.5 scrollbar-thin scrollbar-thumb-zinc-800"
+                className="bg-bg-dark border border-border rounded-xl p-3 h-32 overflow-y-auto font-mono text-[10px] text-zinc-300 space-y-1.5 scrollbar-thin scrollbar-thumb-zinc-800"
               >
                 {simulatedLogs.length === 0 ? (
                   <div className="text-zinc-500 italic text-center py-8">
@@ -339,7 +339,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
                 type="button"
                 onClick={runSimulation}
                 disabled={isSimulating}
-                className="flex-1 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-white font-bold py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-xs shadow-md cursor-pointer"
+                className="flex-1 bg-blue-600 hover:bg-blue-500 disabled:opacity-50 text-zinc-950 font-bold py-3 px-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 text-xs shadow-md cursor-pointer"
               >
                 <Play className="w-4 h-4 fill-current" />
                 {isSimulating ? 'Simulating requests...' : 'Simulate Global Traffic (1,000 reqs)'}
@@ -347,7 +347,7 @@ export default function DemoModal({ isOpen, onClose }: DemoModalProps) {
               <button
                 type="button"
                 onClick={resetSimulation}
-                className="bg-[#1F1F22] border border-[#2D2D31] hover:bg-[#262629] text-zinc-300 font-bold p-3 rounded-xl transition-colors cursor-pointer"
+                className="bg-[#1D323E] border border-[#2B4A5C] hover:bg-[#254151] text-zinc-300 font-bold p-3 rounded-xl transition-colors cursor-pointer"
                 title="Reset simulation parameters"
               >
                 <RefreshCw className="w-4 h-4" />

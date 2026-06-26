@@ -22,7 +22,7 @@ export default function SocialProof() {
   ];
 
   return (
-    <section id="testimonials" className="py-24 px-6 bg-[#0A0A0B] border-t border-[#262629]">
+    <section id="testimonials" className="py-24 px-6 bg-bg-dark border-t border-border">
       <div className="max-w-7xl mx-auto">
         {/* Logos line */}
         <div className="text-center mb-16">
@@ -39,14 +39,14 @@ export default function SocialProof() {
         </div>
 
         {/* Testimonials divider */}
-        <div className="h-px bg-[#262629] my-16 max-w-5xl mx-auto" />
+        <div className="h-px bg-border my-16 max-w-5xl mx-auto" />
 
         {/* Actual Testimonial Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {testimonials.map((t, idx) => (
             <div
               key={idx}
-              className="bg-[#161618] border border-[#262629] rounded-3xl p-8 relative hover:border-zinc-700 transition-all duration-300 hover:shadow-md"
+              className="bg-bg-card border border-border rounded-3xl p-8 relative hover:border-zinc-700 transition-all duration-300 hover:shadow-md"
             >
               <Quote className="absolute top-6 right-6 w-10 h-10 text-zinc-800" />
               

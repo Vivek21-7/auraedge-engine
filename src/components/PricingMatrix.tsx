@@ -43,14 +43,14 @@ export function PricingControls({ eventBus, initialCurrency, initialBilling }: P
   return (
     <div id="pricing-controls" className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 animate-fade-in">
       {/* Billing Cycle Toggle */}
-      <div className="bg-[#161618] p-1 rounded-xl flex items-center border border-[#262629] shadow-sm">
+      <div className="bg-bg-card p-1 rounded-xl flex items-center border border-border shadow-sm">
         <button
           id="btn-billing-monthly"
           type="button"
           onClick={() => handleBillingChange('monthly')}
           className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer ${
             billing === 'monthly'
-              ? 'bg-[#0A0A0B] text-white border border-[#262629] shadow-sm'
+              ? 'bg-bg-dark text-white border border-border shadow-sm'
               : 'text-zinc-400 hover:text-white'
           }`}
         >
@@ -62,7 +62,7 @@ export function PricingControls({ eventBus, initialCurrency, initialBilling }: P
           onClick={() => handleBillingChange('annual')}
           className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-200 flex items-center gap-2 cursor-pointer ${
             billing === 'annual'
-              ? 'bg-[#0A0A0B] text-white border border-[#262629] shadow-sm'
+              ? 'bg-bg-dark text-white border border-border shadow-sm'
               : 'text-zinc-400 hover:text-white'
           }`}
         >
@@ -81,7 +81,7 @@ export function PricingControls({ eventBus, initialCurrency, initialBilling }: P
             id="currency-select"
             value={currency}
             onChange={(e) => handleCurrencyChange(e.target.value as Currency)}
-            className="appearance-none bg-[#161618] border border-[#262629] text-white px-4 py-2 pr-8 rounded-xl text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent cursor-pointer transition-all duration-200 hover:bg-[#1a1a1d]"
+            className="appearance-none bg-bg-card border border-border text-white px-4 py-2 pr-8 rounded-xl text-sm font-semibold shadow-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent cursor-pointer transition-all duration-200 hover:bg-[#1f3745]"
           >
             <option value="USD">USD ($)</option>
             <option value="EUR">EUR (€)</option>
@@ -163,24 +163,24 @@ const PlanCard = React.memo(function PlanCard({ plan, eventBus, initialCurrency,
 
   // Icon pairing for each tier
   const renderCardIcon = () => {
-    if (plan.id === 'starter') return <Zap id="icon-starter" className="w-6 h-6 text-blue-400" />;
-    if (plan.id === 'pro') return <Flame id="icon-pro" className="w-6 h-6 text-amber-400" />;
-    return <Shield id="icon-enterprise" className="w-6 h-6 text-blue-500" />;
+    if (plan.id === 'starter') return <Zap id="icon-starter" className="w-6 h-6 text-primary" />;
+    if (plan.id === 'pro') return <Flame id="icon-pro" className="w-6 h-6 text-accent" />;
+    return <Shield id="icon-enterprise" className="w-6 h-6 text-primary" />;
   };
 
   return (
     <div
       id={`plan-card-${plan.id}`}
-      className={`relative bg-[#161618] rounded-3xl p-8 border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl ${
+      className={`relative bg-bg-card rounded-3xl p-8 border transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl ${
         plan.isPopular
           ? 'highlight-card border-blue-500 shadow-lg scale-102 z-10 md:ring-4 md:ring-blue-500/10'
-          : 'border-[#262629] shadow-sm'
+          : 'border-border shadow-sm'
       }`}
     >
       {plan.isPopular && (
         <span
           id="badge-popular"
-          className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-sm"
+          className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-blue-600 text-zinc-950 text-xs font-bold uppercase tracking-wider px-4 py-1.5 rounded-full shadow-sm"
         >
           Most Popular
         </span>
@@ -191,7 +191,7 @@ const PlanCard = React.memo(function PlanCard({ plan, eventBus, initialCurrency,
         <h3 id={`plan-title-${plan.id}`} className="text-xl font-bold font-secondary text-white">
           {plan.name}
         </h3>
-        <div className="p-2.5 bg-[#0A0A0B] rounded-xl border border-[#262629]">
+        <div className="p-2.5 bg-bg-dark rounded-xl border border-border">
           {renderCardIcon()}
         </div>
       </div>
@@ -241,15 +241,15 @@ const PlanCard = React.memo(function PlanCard({ plan, eventBus, initialCurrency,
         type="button"
         className={`w-full py-3.5 rounded-xl text-sm font-bold shadow-sm transition-all duration-200 cursor-pointer ${
           plan.isPopular
-            ? 'bg-blue-600 hover:bg-blue-500 text-white hover:shadow-md'
-            : 'bg-[#1F1F22] border border-[#2D2D31] hover:bg-[#262629] text-zinc-300'
+            ? 'bg-blue-600 hover:bg-blue-500 text-zinc-950 hover:shadow-md'
+            : 'bg-[#1D323E] border border-[#2B4A5C] hover:bg-[#254151] text-zinc-300'
         }`}
       >
         {plan.ctaText}
       </button>
 
       {/* Divider */}
-      <div className="h-px bg-[#262629] my-6" />
+      <div className="h-px bg-border my-6" />
 
       {/* Features List */}
       <div className="space-y-3.5">
@@ -279,11 +279,11 @@ export default function PricingMatrix() {
   const eventBus = useMemo(() => new PriceEventBus(), []);
 
   return (
-    <section id="pricing" className="py-24 px-6 max-w-7xl mx-auto border-t border-[#262629]">
+    <section id="pricing" className="py-24 px-6 max-w-7xl mx-auto border-t border-border">
       {/* Header section */}
       <div className="text-center max-w-3xl mx-auto mb-16">
-        <div className="inline-flex items-center gap-2 bg-blue-950/40 border border-blue-800/40 px-3.5 py-1.5 rounded-full text-xs font-bold text-blue-400 tracking-wider uppercase mb-4 animate-fade-in">
-          <Info className="w-3.5 h-3.5 text-blue-400" />
+        <div className="inline-flex items-center gap-2 bg-[#114C5A]/30 border border-[#114C5A]/60 px-3.5 py-1.5 rounded-full text-xs font-bold text-[#FFC801] tracking-wider uppercase mb-4 animate-fade-in">
+          <Info className="w-3.5 h-3.5 text-primary" />
           High-performance Pricing
         </div>
         <h2 id="pricing-heading" className="text-4xl md:text-5xl font-extrabold font-secondary tracking-tight text-white mb-4">
@@ -316,7 +316,7 @@ export default function PricingMatrix() {
       </div>
 
       {/* Interactive notice panel */}
-      <div id="profiling-notice" className="mt-12 max-w-3xl mx-auto bg-[#161618] border border-[#262629] rounded-2xl p-5 text-center shadow-sm">
+      <div id="profiling-notice" className="mt-12 max-w-3xl mx-auto bg-bg-card border border-border rounded-2xl p-5 text-center shadow-sm">
         <p className="text-xs font-mono text-zinc-400 flex items-center justify-center gap-2 leading-relaxed">
           <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse inline-block" />
           <strong>PROFILER METRICS LOCK ACTIVE:</strong> Card component structures are wrapped in React.memo with DOM-level ref bindings. Toggling billing cycles or currencies triggers 0 (zero) Card re-renders.

@@ -141,11 +141,11 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
       />
 
       {/* Dialog container */}
-      <div className="bg-[#161618] border border-[#262629] rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col animate-fade-in">
+      <div className="bg-bg-card border border-border rounded-3xl w-full max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl relative z-10 flex flex-col animate-fade-in">
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#262629] bg-[#161618]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-border bg-bg-card">
           <div className="flex items-center gap-2">
-            <div className="p-1.5 bg-blue-600 rounded-lg text-white">
+            <div className="p-1.5 bg-blue-600 rounded-lg text-zinc-950">
               <Server className="w-4 h-4" />
             </div>
             <div>
@@ -155,7 +155,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 hover:bg-[#262629] rounded-lg text-zinc-400 hover:text-white transition-colors cursor-pointer"
+            className="p-1.5 hover:bg-bg-dark rounded-lg text-zinc-400 hover:text-white transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -178,11 +178,11 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                       className={`text-left p-4 rounded-xl border transition-all duration-200 cursor-pointer flex flex-col justify-between min-h-[140px] ${
                         selectedTemplate === template.id
                           ? 'border-blue-500 bg-blue-500/5 shadow-md shadow-blue-500/5'
-                          : 'border-[#262629] bg-[#0A0A0B]/40 hover:border-zinc-700'
+                          : 'border-border bg-bg-dark/40 hover:border-zinc-700'
                       }`}
                     >
                       <div className="flex items-center justify-between w-full">
-                        <div className="p-2 bg-[#0A0A0B] border border-[#262629] rounded-lg">
+                        <div className="p-2 bg-bg-dark border border-border rounded-lg">
                           {template.icon}
                         </div>
                         <span className="text-[10px] font-mono text-zinc-500">{template.size}</span>
@@ -203,7 +203,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                 <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider block mb-3">
                   Global Routing Strategy
                 </label>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-[#0A0A0B] border border-[#262629] p-1 rounded-xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-bg-dark border border-border p-1 rounded-xl">
                   {([
                     { id: 'global', name: 'Global Proxy (280+ nodes)' },
                     { id: 'us', name: 'Americas Hub' },
@@ -214,7 +214,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                       onClick={() => setSelectedRegion(region.id)}
                       className={`py-2 px-3 rounded-lg text-xs font-semibold font-secondary transition-all duration-150 cursor-pointer ${
                         selectedRegion === region.id
-                          ? 'bg-[#161618] border border-[#262629] text-white shadow-sm'
+                          ? 'bg-bg-card border border-border text-white shadow-sm'
                           : 'text-zinc-500 hover:text-zinc-300'
                       }`}
                     >
@@ -225,7 +225,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
               </div>
 
               {/* Specs Panel */}
-              <div className="bg-[#0A0A0B] border border-[#262629] rounded-2xl p-4 flex items-center justify-between text-xs">
+              <div className="bg-bg-dark border border-border rounded-2xl p-4 flex items-center justify-between text-xs">
                 <div className="space-y-1">
                   <p className="text-zinc-400 font-mono">Build Isolation Engine</p>
                   <p className="font-bold text-white flex items-center gap-1.5">
@@ -234,7 +234,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                 </div>
                 <div className="text-right space-y-1">
                   <p className="text-zinc-400 font-mono">Bypass DNS Latency</p>
-                  <p className="font-bold text-blue-400 font-mono">~3.8ms worldwide</p>
+                  <p className="font-bold text-primary font-mono">~3.8ms worldwide</p>
                 </div>
               </div>
 
@@ -242,7 +242,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
               <button
                 type="button"
                 onClick={startDeployment}
-                className="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-600/10 cursor-pointer"
+                className="w-full bg-blue-600 hover:bg-blue-500 text-zinc-950 font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2 shadow-lg hover:shadow-blue-600/10 cursor-pointer"
               >
                 <Play className="w-4 h-4 fill-current" />
                 Trigger Global Deployment
@@ -264,7 +264,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                           ? 'border-blue-500/50 bg-blue-500/5' 
                           : isCompleted 
                             ? 'border-emerald-500/20 bg-emerald-500/2' 
-                            : 'border-[#262629] opacity-40'
+                            : 'border-border opacity-40'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -273,7 +273,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                             ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' 
                             : isCompleted 
                               ? 'bg-emerald-500/10 border-emerald-500/20 text-emerald-400' 
-                              : 'bg-zinc-900 border-zinc-800 text-zinc-600'
+                              : 'bg-bg-dark border-border text-zinc-600'
                         }`}>
                           {isCompleted ? <CheckCircle className="w-4 h-4" /> : <RefreshCw className={`w-4 h-4 ${isActive ? 'animate-spin' : ''}`} />}
                         </div>
@@ -295,7 +295,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                 <label className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest block mb-2">
                   Console Output Stream
                 </label>
-                <div className="bg-[#0A0A0B] border border-[#262629] rounded-xl p-4 h-48 overflow-y-auto font-mono text-[10px] text-zinc-300 space-y-1.5 scrollbar-thin scrollbar-thumb-zinc-800">
+                <div className="bg-bg-dark border border-border rounded-xl p-4 h-48 overflow-y-auto font-mono text-[10px] text-zinc-300 space-y-1.5 scrollbar-thin scrollbar-thumb-zinc-800">
                   {logs.map((log, index) => {
                     const isCmd = log.startsWith('>');
                     const isErr = log.includes('WARNING');
@@ -339,7 +339,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                       href={`https://${selectedTemplate}-node.auraedge.app`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 bg-[#1F1F22] border border-[#2D2D31] hover:bg-[#262629] text-white text-xs font-bold py-2.5 rounded-lg transition-colors cursor-pointer"
+                      className="flex-1 bg-[#1D323E] border border-[#2B4A5C] hover:bg-[#254151] text-white text-xs font-bold py-2.5 rounded-lg transition-colors cursor-pointer"
                     >
                       Visit Edge Site
                     </a>
