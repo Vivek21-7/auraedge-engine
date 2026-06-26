@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-secondary: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-primary: #155EEF;
+  --color-accent: #53B1FD;
+  --color-bg-card: #161618;
+  --color-border: #262629;
+  --color-bg-dark: #0A0A0B;
+
+  /* Premium brand blue overrides */
+  --color-blue-500: #2970FF;
+  --color-blue-600: #155EEF;
+  --color-blue-700: #1044B2;
+  --color-blue-800: #0B318F;
+  --color-blue-950: #061B53;
+}
+
+:root {
+  --color-primary: #155EEF;
+  --color-accent: #53B1FD;
+  --color-bg-card: #161618;
+  --color-border: #262629;
+  --color-bg-dark: #0A0A0B;
+  scroll-behavior: smooth;
+}
+
+/* Custom dark card gradients & glows */
+.card-gradient {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.highlight-card {
+  border-color: var(--color-primary) !important;
+  box-shadow: 0 0 40px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Custom fade-in animations with CSS transitions */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+

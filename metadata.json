@@ -1,0 +1,6 @@
+{
+  "name": "SaaS Pricing Landing Page",
+  "description": "A high-performance SaaS landing page featuring a zero-re-render PricingMatrix pricing toggle and an interactive Bento grid.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
