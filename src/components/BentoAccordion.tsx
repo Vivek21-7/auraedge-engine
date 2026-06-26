@@ -40,7 +40,7 @@ export default function BentoAccordion() {
   const [securityLocked, setSecurityLocked] = useState<boolean>(true);
   
   // Feature 3: Selected Region
-  const [selectedRegion, setSelectedRegion] = useState<'us' | 'eu' | 'ap'>('us');
+  const [selectedRegion, setSelectedRegion] = useState<'us' | 'eu'>('us');
   
   // Feature 4: Active Pipeline Step
   const [pipelineStep, setPipelineStep] = useState<number>(0);
@@ -84,8 +84,7 @@ export default function BentoAccordion() {
   // Helper values for Edge Sync latency simulation
   const regionsData = {
     us: { name: 'Americas (IAD)', ping: '12ms', load: '31%', status: 'optimal' },
-    eu: { name: 'Europe West (FRA)', ping: '24ms', load: '48%', status: 'optimal' },
-    ap: { name: 'Asia Pacific (NRT)', ping: '42ms', load: '19%', status: 'optimal' }
+    eu: { name: 'Europe West (FRA)', ping: '24ms', load: '48%', status: 'optimal' }
   };
 
   // Helper values for Pipeline Steps
@@ -241,8 +240,8 @@ export default function BentoAccordion() {
             </div>
 
             {/* Region Selectors */}
-            <div className="grid grid-cols-3 gap-1 bg-[#0A0A0B] border border-[#262629] p-0.5 rounded-lg text-[10px]">
-              {(['us', 'eu', 'ap'] as const).map((r) => (
+            <div className="grid grid-cols-2 gap-1 bg-[#0A0A0B] border border-[#262629] p-0.5 rounded-lg text-[10px]">
+              {(['us', 'eu'] as const).map((r) => (
                 <button
                   key={r}
                   type="button"

@@ -18,7 +18,7 @@ interface Template {
 
 export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateId>('api');
-  const [selectedRegion, setSelectedRegion] = useState<'global' | 'us' | 'eu' | 'ap'>('global');
+  const [selectedRegion, setSelectedRegion] = useState<'global' | 'us' | 'eu'>('global');
   const [isDeploying, setIsDeploying] = useState(false);
   const [currentStep, setCurrentStep] = useState(0);
   const [logs, setLogs] = useState<string[]>([]);
@@ -93,7 +93,7 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
           ...prev,
           `\n[SUCCESS] Server successfully deployed and active in all selected 280+ nodes.`,
           `Live Edge Endpoint: https://${selectedTemplate}-node.auraedge.app`,
-          `Average ping delay across Europe, Asia-Pac, and Americas: 3.82 ms`,
+          `Average ping delay across Europe and Americas: 3.82 ms`,
           `Pristine security certification verified.`
         ]);
         setIsSuccess(true);
@@ -203,12 +203,11 @@ export default function DeployModal({ isOpen, onClose }: DeployModalProps) {
                 <label className="text-xs font-bold text-zinc-400 uppercase tracking-wider block mb-3">
                   Global Routing Strategy
                 </label>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-2 bg-[#0A0A0B] border border-[#262629] p-1 rounded-xl">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-2 bg-[#0A0A0B] border border-[#262629] p-1 rounded-xl">
                   {([
                     { id: 'global', name: 'Global Proxy (280+ nodes)' },
                     { id: 'us', name: 'Americas Hub' },
-                    { id: 'eu', name: 'Euro Gateway' },
-                    { id: 'ap', name: 'Asia Pacific Grid' }
+                    { id: 'eu', name: 'Euro Gateway' }
                   ] as const).map(region => (
                     <button
                       key={region.id}
